@@ -1,0 +1,89 @@
+import {
+    Point
+} from './point.js';
+
+export class Wave{
+    constructor(index, totalPoints, color){
+        this.index = index;
+        this.totalPoints = totalPoints;
+        this.color = color;
+        this.points = [] ;
+
+    }
+
+    resize(stageWidth, stageHeight){
+        this.stageWidth = stageWidth;
+        this.stageHeight = stageHeight;
+
+        this.centerX = stageWidth / 2;
+        this.centerY = stageHeight / 2;
+        
+        this.pointGap = this.stageWidth / (this.totalPoints - 1);
+        
+        this.init();
+    }
+
+    init(){
+        //this.point = new Point(this.centerX, this.centerY);
+
+        this.points = [];
+
+        for(let i = 0; i< this.totalPoints; i ++){
+            const point = new Point(
+                this.index + i,
+                this.pointGap * i,
+                this.centerY
+            );
+
+            this.points[i] = point;
+        }
+    }
+
+    draw(ctx) {
+        ctx.beginPath(); 
+        /* 새로운 경로를 만듭니다. 경로가 생성됬다면, 이후 그리기 명령들은 경로를 구성하고 만드는데 사용하게 됩니다.
+         https://unikys.tistory.com/274
+          */
+        //ctx.fillStyle = '#ff0000'
+        //this.point.update();
+
+        //ctx.arc(this.point.x, this.point.y, 30, 0, 2* Math.PI); 
+        /* 원을 그리는 함수 
+        ctx.arc(x,y, 반지름, 시작각도, 종료각도, 그리는 방향);
+        http://blog.naver.com/PostView.nhn?blogId=javaking75&logNo=140170132097
+        */
+        //ctx.fill();
+        
+        ctx.fillStyle = this.color;
+
+        let prevX = this.points[0].x;
+        let prevY = this.points[0].y;
+
+        ctx.moveTo(prevX, prevY);
+
+        for(let i = 0; i< this.totalPoints; i++){            
+            //if(i < this.totalPoints -1){
+                this.points[i].update();
+            //}
+            
+            const cx = (prevX  + this.points[i].x) / 2;
+            const cy = (prevY  + this.points[i].y) / 2;
+
+            //ctx.lineTo(cx, cy);            
+            ctx.quadraticCurveTo(prevX, prevY, cx, cy);            
+
+            prevX = this.points[i].x;
+            prevY = this.points[i].y;
+        }
+
+        //ctx.lineTo(prevX, prevY);           
+        //ctx.lineTo(this.stageWidth,this.stageHeight); 
+        //ctx.lineTo(this.points[0].x,this.stageHeight);         
+        ctx.lineTo(prevX, prevY);           
+        ctx.lineTo(this.stageWidth,this.stageHeight); 
+        ctx.lineTo(this.points[0].x,this.stageHeight);                 
+
+        ctx.fill();
+        ctx.closePath();
+    }
+}
