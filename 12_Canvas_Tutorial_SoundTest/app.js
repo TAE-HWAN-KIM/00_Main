@@ -18,6 +18,8 @@
           this.dataArray = new Uint8Array(this.audioAnalyser.frequencyBinCount);
           this.audioCtx.resume();
 
+          this.rotateCount = 0;
+
           // document.createElement('audio');
           //this.audio.classList.add('myAudio');
           //this.audio.setAttribute('controls', '');
@@ -49,30 +51,73 @@
           this.ctx.scale(this.pixelRatio, this.pixelRatio);
       }
 
+      //중앙에서 퍼저나오는 음향
+      //   animate(t) {
+      //       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      //       this.audioAnalyser.getByteFrequencyData(this.dataArray);
+      //       const thisSound = this.dataArray;
+      //       const len = thisSound.length;
+      //       const stap = 800 / len;
+      //       this.ctx.save();
+      //       this.ctx.beginPath();
+      //       this.ctx.fillStyle = '#000';
+      //       this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2);
+
+      //       const rad_step = (Math.PI * 2) / len;
+      //       const radius = 1;
+
+      //       for (let i = 0; i < len; i++) {
+      //           //this.ctx.moveTo(0, 0);
+      //           const temp = thisSound[i];
+
+
+      //           const soundX = thisSound[i] * Math.cos(rad_step * i);
+      //           const arcx = radius * Math.cos(rad_step * i);
+      //           const soundy = thisSound[i] * Math.sin(rad_step * i);
+      //           const arcy = radius * Math.sin(rad_step * i);
+      //           //i == 0 ? this.ctx.moveTo(arcx, arcy) : this.ctx.lineTo(soundX, soundy);
+      //           //this.ctx.translate(arcx, arcy);
+      //           this.ctx.lineTo(soundX, soundy);
+      //       }
+      //       this.ctx.closePath();
+      //       this.ctx.fill();
+      //       this.ctx.restore();          
+      //       requestAnimationFrame(this.animate.bind(this));
+      //   }
+
+      //중앙에서 일정거리 떨어져 원을 만들고 그 외부에 그리는 형식
       animate(t) {
-            this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
+          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
           this.audioAnalyser.getByteFrequencyData(this.dataArray);
+
           const thisSound = this.dataArray;
           const len = thisSound.length;
           const stap = 800 / len;
-          this.ctx.beginPath();
-          this.ctx.fillStyle = '#000';          
-          this.ctx.moveTo(0, this.canvas.height)
-          //this.ctx.moveTo(this.canvas.width/2, this.canvas.height/2)
-          for (let i = 0; i < len; i++) {
-              const temp = thisSound[i];
-              const x = i * stap;
-              const y = this.dataArray[i];
-              
-              //this.ctx.arc(x,y, y,  0, Math.PI * 2 , false);
-              this.ctx.lineTo(x,y);              
-          }
-          this.ctx.lineTo(0, 0);
-          //this.ctx.lineTo(this.canvas.width, this.canvas.height);
-          this.ctx.closePath();
-          this.ctx.fill();
+          const radius = 100;
 
-          // this.ctx.drawImage(this.audio, 0, 0, this.canvas.width, this.canvas.height);          
+          this.ctx.beginPath();
+          this.ctx.save();
+          this.ctx.fillStyle = 'green';
+          this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2);
+
+          const rad_step = (Math.PI * 2) / len;
+          this.ctx.rotate(this.rotateCount += 0.008);
+          for (let i = 0; i < len; i++) {
+              this.ctx.save();
+
+              const temp = thisSound[i] + radius;
+              const soundX = temp * Math.cos(rad_step * i);
+              const arcx = radius * Math.cos(rad_step * i);
+              const soundy = temp * Math.sin(rad_step * i);
+              const arcy = radius * Math.sin(rad_step * i);
+              //this.ctx.translate(arcx, arcy);
+              //this.ctx.arc(soundX,soundy, 2, 0, Math.PI * 2, false);            
+              this.ctx.lineTo(soundX, soundy);
+              this.ctx.restore();
+          }
+          this.ctx.closePath();
+          this.ctx.stroke();
+          this.ctx.restore();
           requestAnimationFrame(this.animate.bind(this));
       }
   }
