@@ -42,6 +42,9 @@ import {
     App as Canvas_Tutorial_VideoSpletAndWave
 } from './11_Canvas_Tutorial_VideoSpletAndWave/app.js';
 
+import {
+    App as Canvas_Tutorial_SoundTest
+} from './12_Canvas_Tutorial_SoundTest/app.js';
 
 class MainApp {
     constructor() {
@@ -114,6 +117,12 @@ class MainApp {
                 //this.activeApp =
                 new Canvas_Tutorial_VideoSpletAndWave();
                 break;
+
+            case '12_Canvas_Tutorial_SoundTest':
+                //this.activeApp =
+                new Canvas_Tutorial_SoundTest();
+                break;
+
 
         }
 
