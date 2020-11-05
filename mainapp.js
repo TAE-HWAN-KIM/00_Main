@@ -64,58 +64,47 @@ class MainApp {
         this.removeCanvas()
         switch (this.activeFdata) {
             case '01_Canvas_Tutorial_WaveLine':
-                //this.activeApp =
-                new Canvas_Tutorial_WaveLine();
+                this.activeApp = new Canvas_Tutorial_WaveLine();
                 break;
 
             case '02_Canvas_Tutorial_ball':
-                //this.activeApp =
-                new Canvas_Tutorial_ball();
+                this.activeApp = new Canvas_Tutorial_ball();
                 break;
 
             case '03_Canvas_Tutorial_2balland2bar':
-                //this.activeApp =
-                new Canvas_Tutorial_2balland2bar();
+                this.activeApp = new Canvas_Tutorial_2balland2bar();
                 break;
 
             case '04_Canvas_Tutorial_DrawLine':
-                //this.activeApp = 
-                new Canvas_Tutorial_DrawLine();
+                this.activeApp = new Canvas_Tutorial_DrawLine();
                 break;
 
             case '05_Canvas_Tutorial_VideoCanvas':
-                //this.activeApp = 
-                new Canvas_Tutorial_VideoCanvas();
+                this.activeApp = new Canvas_Tutorial_VideoCanvas();
                 break;
 
             case '06_Canvas_Tutorial_VideoCanvasScroll':
-                //this.activeApp = 
-                new Canvas_Tutorial_VideoCanvasScroll();
+                this.activeApp = new Canvas_Tutorial_VideoCanvasScroll();
                 break;
 
             case '07_Canvas_Tutorial_MoveGradation':
-                //this.activeApp =
-                new Canvas_Tutorial_MoveGradation();
+                this.activeApp = new Canvas_Tutorial_MoveGradation();
                 break;
 
             case '08_Canvas_Tutorial_RotatingShape':
-                //this.activeApp =
-                new Canvas_Tutorial_RotatingShape();
+                this.activeApp = new Canvas_Tutorial_RotatingShape();
                 break;
 
             case '09_Canvas_Tutorial_ClickWaveLine':
-                //this.activeApp = 
-                new Canvas_Tutorial_ClickWaveLine();
+                this.activeApp = new Canvas_Tutorial_ClickWaveLine();
                 break;
 
             case '10_Canvas_Tutorial_ImageSpletAndWave':
-                //this.activeApp =
-                new Canvas_Tutorial_ImageSpletAndWave();
+                this.activeApp = new Canvas_Tutorial_ImageSpletAndWave();
                 break;
 
             case '11_Canvas_Tutorial_VideoSpletAndWave':
-                //this.activeApp =
-                new Canvas_Tutorial_VideoSpletAndWave();
+                this.activeApp = new Canvas_Tutorial_VideoSpletAndWave();
                 break;
 
             case '12_Canvas_Tutorial_SoundTest':
@@ -148,85 +137,4 @@ class MainApp {
 
 window.onload = () => {
     new MainApp();
-
-    // const buttonsCon = document.querySelector('.buttonsCon');
-    // buttonsCon.addEventListener('click', buttonClickEvent);
-
-    // let activeFdata = '';
-
-    // function buttonClickEvent(e) {              
-    //     activeFdata = e.target.getAttribute('data-fdata')
-
-    //     removeCanvas()
-    //     switch (activeFdata) {
-    //         case '01_Canvas_Tutorial_WaveLine':
-    //             //this.activeApp =
-    //              new Canvas_Tutorial_WaveLine();
-    //             break;
-
-    //         case '02_Canvas_Tutorial_ball':
-    //             //this.activeApp =
-    //              new Canvas_Tutorial_ball();
-    //             break;
-
-    //         case '03_Canvas_Tutorial_2balland2bar':
-    //             //this.activeApp =
-    //              new Canvas_Tutorial_2balland2bar();
-    //             break;
-
-    //         case '04_Canvas_Tutorial_DrawLine':
-    //             //this.activeApp = 
-    //             new Canvas_Tutorial_DrawLine();
-    //             break;
-
-    //         case '05_Canvas_Tutorial_VideoCanvas':
-    //             //this.activeApp = 
-    //             new Canvas_Tutorial_VideoCanvas();
-    //             break;
-
-    //         case '06_Canvas_Tutorial_VideoCanvasScroll':
-    //             //this.activeApp = 
-    //             new Canvas_Tutorial_VideoCanvasScroll();
-    //             break;
-
-    //         case '07_Canvas_Tutorial_MoveGradation':
-    //             //this.activeApp =
-    //             new Canvas_Tutorial_MoveGradation();
-    //             break;
-
-    //         case '08_Canvas_Tutorial_RotatingShape':
-    //             //this.activeApp =
-    //              new Canvas_Tutorial_RotatingShape();
-    //             break;
-
-    //         case '09_Canvas_Tutorial_ClickWaveLine':
-    //             //this.activeApp = 
-    //             new Canvas_Tutorial_ClickWaveLine();
-    //             break;
-
-    //         case '10_Canvas_Tutorial_ImageSpletAndWave':
-    //             //this.activeApp =
-    //              new Canvas_Tutorial_ImageSpletAndWave();
-    //             break;
-
-    //     }
-
-    //     window.onload = '';
-    // }
-
-    // function removeCanvas() {
-    //     const removeCanvas = document.getElementsByTagName('canvas');
-
-    //     for (let i = 0; i < removeCanvas.length; i++) {
-    //         const element = removeCanvas[i];
-    //         element.remove();
-    //     }
-
-    //     const removeButtons = document.querySelectorAll('.buttons');
-
-    //     for (let i = 0; i < removeButtons.length; i++) {
-    //         const element = removeButtons[i];
-    //         element.remove();
-    //     }
-    // }
 }

@@ -152,6 +152,6 @@
       }
   }
 
-  window.onload = () => {
-      new App();
-  };
+  //window.onload = () => {
+  //    new App();
+  //};
