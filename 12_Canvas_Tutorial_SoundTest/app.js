@@ -97,7 +97,8 @@
 
           this.ctx.beginPath();
           this.ctx.save();
-          this.ctx.fillStyle = 'green';
+          this.ctx.lineWidth = 2;
+          this.ctx.strokeStyle = 'green';
           this.ctx.translate(this.canvas.width / 2, this.canvas.height / 2);
 
           const rad_step = (Math.PI * 2) / len;

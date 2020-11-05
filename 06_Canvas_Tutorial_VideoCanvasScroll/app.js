@@ -58,22 +58,22 @@ export class App {
     }
 
     scroll(e) {
-        if (e.wheelDeltaY && this.video.currentTime + ((e.wheelDeltaY) * -1 / 1000) > 0) {
-            if (this.video.paused == true)
-                this.video.play();
+        if (e.wheelDeltaY){//} && this.video.currentTime - ((e.wheelDeltaY) / 1000) > 0) {
+            // if (this.video.paused == true)
+            //     this.video.play();
 
-            this.video.currentTime += (e.wheelDeltaY * -1 / 1000);
+            this.video.currentTime -= (e.wheelDeltaY / 1000);
 
-            if (this.video.paused != true)
-                this.video.pause();
+            // if (this.video.paused != true)
+            //     this.video.pause();
         } else { //파이어폭스 전용
-            if (this.video.paused == true)
-                this.video.play();
+            // if (this.video.paused == true)
+            //     this.video.play();
 
             this.video.currentTime += (e.detail / 10);
 
-            if (this.video.paused != true)
-                this.video.pause();
+            // if (this.video.paused != true)
+            //     this.video.pause();
 
         }
     }
