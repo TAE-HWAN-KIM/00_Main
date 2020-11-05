@@ -48,9 +48,64 @@ import {
 
 class MainApp {
     constructor() {
-        this.buttonsCon = document.querySelector('.buttonsCon');
-        this.buttonsCon.addEventListener('click', this.buttonClickEvent.bind(this));
+        this.buttonsCon = document.createElement('div');
+        this.buttonsCon.classList.add('buttonsCon');
+        document.body.appendChild(this.buttonsCon);
+        //this.buttonsCon = document.querySelector('.buttonsCon');
 
+        this.menuList = [{
+                menu: '01_Canvas_Tutorial_WaveLine',
+                name: 'WaveLine'
+            },
+            {
+                menu: '02_Canvas_Tutorial_ball',
+                name: 'ball'
+            },
+            {
+                menu: '03_Canvas_Tutorial_2balland2bar',
+                name: '2balland2bar'
+            },
+            {
+                menu: '04_Canvas_Tutorial_DrawLine',
+                name: 'DrawLine'
+            },
+            {
+                menu: '05_Canvas_Tutorial_VideoCanvas',
+                name: 'VideoCanvas'
+            },
+            {
+                menu: '06_Canvas_Tutorial_VideoCanvasScroll',
+                name: 'VideoCanvasScroll'
+            },
+            {
+                menu: '07_Canvas_Tutorial_MoveGradation',
+                name: 'MoveGradation'
+            },
+            {
+                menu: '08_Canvas_Tutorial_RotatingShape',
+                name: 'RotatingShape'
+            },
+            {
+                menu: '09_Canvas_Tutorial_ClickWaveLine',
+                name: 'ClickWaveLine'
+            },
+            {
+                menu: '10_Canvas_Tutorial_ImageSpletAndWave',
+                name: 'ImageSpletAndWave'
+            },
+            {
+                menu: '11_Canvas_Tutorial_VideoSpletAndWave',
+                name: 'VideoSpletAndWave'
+            },
+            {
+                menu: '12_Canvas_Tutorial_SoundTest',
+                name: 'SoundTest'
+            }
+        ];
+
+        this.createButtons();
+
+        this.buttonsCon.addEventListener('click', this.buttonClickEvent.bind(this));
         this.activeFdata = '';
         this.activeApp = null;
     }
@@ -109,10 +164,8 @@ class MainApp {
 
             case '12_Canvas_Tutorial_SoundTest':
                 //this.activeApp =
-                new Canvas_Tutorial_SoundTest();
+                this.activeApp = new Canvas_Tutorial_SoundTest();
                 break;
-
-
         }
 
         window.onload = '';
@@ -131,6 +184,21 @@ class MainApp {
         for (let i = 0; i < removeButtons.length; i++) {
             const element = removeButtons[i];
             element.remove();
+        }
+    }
+
+    createButtons() {
+        const len = this.menuList.length;
+        const menuDoc = document.createElement('button');
+        menuDoc.setAttribute('data-fdata', 'main');
+        menuDoc.innerText = 'go to Main';
+        this.buttonsCon.appendChild(menuDoc);
+        for (let i = 0; i < len; i++) {
+            const menu = this.menuList[i];
+            const menuDoc = document.createElement('button');
+            menuDoc.setAttribute('data-fdata', menu.menu);
+            menuDoc.innerText = menu.name;
+            this.buttonsCon.appendChild(menuDoc);
         }
     }
 }

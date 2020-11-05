@@ -1,12 +1,23 @@
   export class App {
       constructor() {
+          this.textInput = document.createElement('input');
+          this.textInput.setAttribute('type', 'text');
+          document.body.appendChild(this.textInput);
+          this.selectButton = document.createElement('button');
+          //this.selectButton.setAttribute('type', '');
+          this.selectButton.innerText = 'Play this url'
+          document.body.appendChild(this.selectButton);
+          this.selectButton.addEventListener('click', this.selectUrlPlay.bind(this));
           /* 생성자 함수를 다시 정의 하는 용도로 쓸 수 있다 */
           this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
           this.canvas = document.createElement('canvas');
           this.ctx = this.canvas.getContext('2d');
-          //this.audio = new Audio('./Kygo_feat_Conrad_Firestone.mp3');
-          this.audio = new Audio('./12_Canvas_Tutorial_SoundTest/Kygo_feat_Conrad_Firestone.mp3');
+          this.audio = document.createElement('audio');
+          this.audio.crossOrigin = "anonymous"
+          //this.audio.src = './Kygo_feat_Conrad_Firestone.mp3';
+          //this.audio.src = './12_Canvas_Tutorial_SoundTest/Kygo_feat_Conrad_Firestone.mp3';
+          this.audio.src = 'https://file.ssenhosting.com/data1/pb_24706/HYPBGMAlibi.mp3';
 
           this.audioCtx = new(window.AudioContext || window.webkitAudioContext)();
           this.source = this.audioCtx.createMediaElementSource(this.audio);
@@ -120,6 +131,25 @@
           this.ctx.stroke();
           this.ctx.restore();
           requestAnimationFrame(this.animate.bind(this));
+      }
+
+      selectUrlPlay(){
+          const url = this.textInput.value;
+
+          if(url.trim().length == 0 ){
+              alert('no Url');
+              return;
+          }
+          this.audio.pause();
+          this.audio.src = url;
+          setTimeout(() => {
+            this.audio.play();
+          }, (1000));
+        //   while (this.audio.played  != true) {
+        //     if(this.audio.readyState == true){
+                
+        //     }
+        //   }
       }
   }
 
