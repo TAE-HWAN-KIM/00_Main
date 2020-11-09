@@ -16,8 +16,8 @@
           this.audio = document.createElement('audio');
           this.audio.crossOrigin = "anonymous"
           //this.audio.src = './Kygo_feat_Conrad_Firestone.mp3';
-          //this.audio.src = './12_Canvas_Tutorial_SoundTest/Kygo_feat_Conrad_Firestone.mp3';
-          this.audio.src = 'https://file.ssenhosting.com/data1/pb_24706/HYPBGMAlibi.mp3';
+          this.audio.src = './12_Canvas_Tutorial_SoundTest/Kygo_feat_Conrad_Firestone.mp3';
+          //this.audio.src = 'https://file.ssenhosting.com/data1/pb_24706/HYPBGMAlibi.mp3';
 
           this.audioCtx = new(window.AudioContext || window.webkitAudioContext)();
           this.source = this.audioCtx.createMediaElementSource(this.audio);
