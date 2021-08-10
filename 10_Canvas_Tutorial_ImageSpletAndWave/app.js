@@ -78,6 +78,9 @@
           for (let i = 0; i < len; i++) {
               this.dots[i].reset();              
           }
+        
+          this.isAnimateClose = false;
+          this.thisCounter = 0 ;
 
           this.ctx.drawImage(
               this.image,
