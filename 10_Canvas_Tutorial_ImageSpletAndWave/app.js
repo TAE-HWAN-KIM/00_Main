@@ -108,6 +108,8 @@
         
           if(this.thisCounter == 10)
             this.isAnimateClose = true;
+          else 
+            this.thisCounter++;
       }
 
       drawImage() {
