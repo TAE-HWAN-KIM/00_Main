@@ -69,7 +69,7 @@
               this.drawImage();
           }
 
-          window.requestAnimationFrame(this.animate.bind(this));
+          //window.requestAnimationFrame(this.animate.bind(this));
       }
 
       onClick(e) {
@@ -89,7 +89,7 @@
               this.imgPos.x, this.imgPos.y,
               this.imgPos.width, this.imgPos.height
           );
-
+          window.requestAnimationFrame(this.animate.bind(this));
           this.ripple.start(e.offsetX, e.offsetY);
       }
 
@@ -109,7 +109,7 @@
               }
           }
         
-          if(this.thisCounter == 10)
+          if(this.thisCounter == 200)
             this.isAnimateClose = true;
           else 
             this.thisCounter++;
