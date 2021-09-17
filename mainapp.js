@@ -140,7 +140,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_WaveLine') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_WaveLine();
-                    appList.push({key 'Canvas_Tutorial_WaveLine': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_WaveLine' , value : this.activeApp})
                 }
                 break;
 
@@ -149,7 +149,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_ball') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_ball();
-                    appList.push({key 'Canvas_Tutorial_ball': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_ball' , value : this.activeApp})
                 }
                 break;
 
@@ -158,7 +158,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_2balland2bar') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_2balland2bar();
-                    appList.push({key 'Canvas_Tutorial_2balland2bar': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_2balland2bar' , value : this.activeApp})
                 }
                 break;
 
@@ -167,7 +167,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_DrawLine') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_DrawLine();
-                    appList.push({key 'Canvas_Tutorial_DrawLine': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_DrawLine' , value : this.activeApp})
                 }
                 break;
 
@@ -176,7 +176,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_VideoCanvas') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_VideoCanvas();
-                    appList.push({key 'Canvas_Tutorial_VideoCanvas': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_VideoCanvas' , value : this.activeApp})
                 }
                 break;
 
@@ -185,7 +185,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_VideoCanvasScroll') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_VideoCanvasScroll();
-                    appList.push({key 'Canvas_Tutorial_VideoCanvasScroll': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_VideoCanvasScroll' , value : this.activeApp})
                 }
                 break;
 
@@ -194,7 +194,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_MoveGradation') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_MoveGradation();
-                    appList.push({key 'Canvas_Tutorial_MoveGradation': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_MoveGradation' , value : this.activeApp})
                 }
                 break;
 
@@ -203,7 +203,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_RotatingShape') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_RotatingShape();
-                    appList.push({key 'Canvas_Tutorial_RotatingShape': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_RotatingShape' , value : this.activeApp})
                 }
                 break;
 
@@ -212,7 +212,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_ClickWaveLine') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_ClickWaveLine();
-                    appList.push({key 'Canvas_Tutorial_ClickWaveLine': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_ClickWaveLine' , value : this.activeApp})
                 }
                 break;
 
@@ -221,7 +221,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_ImageSpletAndWave') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_ImageSpletAndWave();
-                    appList.push({key 'Canvas_Tutorial_ImageSpletAndWave': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_ImageSpletAndWave' , value : this.activeApp})
                 }
                 break;
 
@@ -230,7 +230,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_VideoSpletAndWave') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_VideoSpletAndWave();
-                    appList.push({key 'Canvas_Tutorial_VideoSpletAndWave': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_VideoSpletAndWave' , value : this.activeApp})
                 }
                 break;
 
@@ -239,7 +239,7 @@ class MainApp {
                     this.activeApp = appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_SoundTest') return k}).value;
                 else {
                     this.activeApp = new Canvas_Tutorial_SoundTest();
-                    appList.push({key 'Canvas_Tutorial_SoundTest': , value : this.activeApp})
+                    appList.push({key :'Canvas_Tutorial_SoundTest' , value : this.activeApp})
                 }
                 break;
         }
