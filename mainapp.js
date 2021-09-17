@@ -133,7 +133,7 @@ class MainApp {
 
         this.activeFdata = e.target.getAttribute('data-fdata')
 
-        this.removeCanvas()
+        //this.removeCanvas()
         switch (this.activeFdata) {
             case '01_Canvas_Tutorial_WaveLine':
                 if(appList.find((k,index) => {if(k.key == 'Canvas_Tutorial_WaveLine') return k}))
